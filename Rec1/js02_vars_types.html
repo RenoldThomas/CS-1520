@@ -13,7 +13,7 @@
 	const z3 = y1 * x;
 	const z4 = x * y2;
 
-	// Expected result: 1: 12 + 5 = 17
+	// Expected result: 1: 12 + 5 = 125
 	console.log(`1: ${x} + ${y1} = ${z1}`);
 
 	// Expected result: 2: 12 + 5 = 17
@@ -23,15 +23,15 @@
 	console.log(`3: (flipped) ${y1} * ${x} = ${z3}`);
 
 
-	// Expected result: 4: undefined
+	// Expected result: 4: number
 	console.log(`4: ${typeof(z4)}`);
 
-	// Expected result: 5: undefined = undefined
+	// Expected result: 5: 12 * bogus = NaN
 	console.log(`5: ${x} * ${y2} = ${z4}`);
 
 	
 	const wacky = z4 + " ha hah";
-	// Expected result:  6: wacky is undefined ha ha and its type is string
+	// Expected result:  6: wacky is NaN ha hah and its type is string
 	console.log(`6: wacky is ${wacky} and its type is ${typeof(wacky)}`);
 
 	let s;
@@ -74,7 +74,7 @@
 	var q = 8;
 
 	//p = 5;
-	// Expected result: 17: p is undefined and its type is undefined 
+	// Expected result: Uncaught ReferenceError: Cannot access 'p' before initialization
 	console.log(`17: p is ${p} and its type is ${typeof(p)}`);
 	let p;
 </script>
