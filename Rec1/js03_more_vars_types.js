@@ -45,7 +45,9 @@ function demo() {
 	const s2 = "a string";
 	const s3 = s1;
 
-	// Expected result: s1 is equal to s2! 
+	// Expected result: s1 is 
+	//                  equal to 
+	//                  s2! 
 	console.log("\n\ns1 is ");
 	if (s1 == s2) {
 		console.log("equal to");
@@ -58,7 +60,9 @@ function demo() {
 	}
 	console.log("s2!");
 	
-	// Expected result: s1 is equal to s3!
+	// Expected result: s1 is 
+	//                  equal to 
+	//                  s3!
 	console.log("\n\ns1 is ");
 	if (s1 == s3) {
 		console.log("equal to");
