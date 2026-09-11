@@ -18,10 +18,10 @@
 	*	- zero if a is equal to b
 	*/
 	const compareSal = (a, b) => {
-		if (a === b) {
+		if (a.salary === b.salary) {
 			return 0;
 		}
-		return a < b ? -1 : 1;
+		return a.salary < b.salary ? -1 : 1;
 	}
 
 	/**
@@ -36,10 +36,10 @@
 	*	- zero if a is equal to b
 	*/
 	const compareAge = (a, b) => {
-		if (a === b) {
+		if (a.age === b.age) {
 			return 0;
 		}
-		return a < b ? -1 : 1;
+		return a.age < b.age ? -1 : 1;
 	}
 
 	//For the next two functions, do not use an arrow function.
