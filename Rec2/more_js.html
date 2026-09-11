@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>More JS</title>
+<script type="text/javascript">
+	// Using arrow functions, complete each of the following steps below
+	// Remember that arrow functions can be assigned to variables
+
+	/**
+	* 1. Write a function called compareSal, that takes
+	* in two formal arguments, a and b, and returns 
+	* whether is a's salary is less than, greater than, or equal to
+	* b's salary as a comparison function.
+	* Assume that salary is a property of each formal argument.
+	* Return:
+	*	- value less than zero if a is less than b
+	*	- value greater than zero if a is greater than b
+	*	- zero if a is equal to b
+	*/
+	const compareSal = (a, b) => {
+		if (a === b) {
+			return 0;
+		}
+		return a < b ? -1 : 1;
+	}
+
+	/**
+	* 2. Write a function called compareAge, that takes in
+	* two formal arguments, a and b, and returns 
+	* whether a's age is less than, greater than, or equal to
+	* b's age as a comparison function.
+	* Assume that age is a property of each formal argument.
+	* Return:
+	*	- value less than zero if a is less than b
+	*	- value greater than zero if a is greater than b
+	*	- zero if a is equal to b
+	*/
+	const compareAge = (a, b) => {
+		if (a === b) {
+			return 0;
+		}
+		return a < b ? -1 : 1;
+	}
+
+	//For the next two functions, do not use an arrow function.
+	
+	/**
+	* 3. Write a "constructor" function for initializing Worker objects.
+	* The function should expect four formal arguments: n, a, s, prop.
+	* n: the name of the Worker
+	* a: the age of the Worker
+	* s: the Worker's salary
+	* prop: a function for displaying the properties of a Worker. Note that
+	*		we will define this function next.
+	* Within the constructor, n should be set to name, a to age, s to salary
+	*	and prop to show.
+	*/
+	function Worker(n, a, s, prop) {
+		this.name = n;
+		this.age = a;
+		this.salary = s;
+		this.show = prop;
+	}
+
+	/**
+	* 4. Write a function called display, that takes in zero
+	* formal arguments, and displays the name, age, and salary of
+	* a Worker to the console. Note that no arguments are provided
+	* as input. Which keyword in Javascript can be used to refer to the
+	* current context where the function is being called?
+	*/
+	function display () {
+		console.log(this.name);
+		console.log(this.age);
+		console.log(this.salary);
+	}
+	
+	/**
+	* 5. Write a function called show_workers, that takes in one
+	* formal argument, w that is an array of workers. Within
+	* the function your first task is to log "Here are the workers:"
+	* to the console. Next, iterate through each worker in w and
+	* log (to the console) the worker by invoking the worker's show function. After
+	* each worker, log a newline. Similarly, log a newline after all workers have
+	* been displayed.
+	* You may use either an arrow function or traditional function.
+	*/
+	const show_workers = (w) => {
+		console.log("Here are the workers:");
+		for (const worker of w) {
+			console.log(worker.show() + "\n");
+		}
+		console.log("\n");
+	}
+
+
+
+	const main = _ => {
+		// 6. Review the boilerplate code below initializing Arrays of
+		// names, ages, and salaries.
+		const names = ["Herb", "Mort", "Ingmar", "Marge", "Gertrude", "Bertha"];
+		const ages = [50, 35, 40, 25, 70, 30];
+		const sals = [40000, 80000, 100000, 60000, 250000, 90000];
+
+		// 7. Initialize an array with immutable reference and sufficient space
+		// to hold all of the workers. Name the array variable, workers
+		const workers = new Array(6);
+		
+		// 8. Initialize each worker within the workers array using the "constructor"
+		// function.
+		for (let i = 0; i < workers.length; i++) {
+			workers[i] = new Worker(names[i], ages[i], sals[i], display);
+		}
+		
+		show_workers(workers);
+		console.log("\n");
+
+		// 9. Sort the workers based on their salaries using compareSal.
+		// After sorting the workers, use show_workers to display the workers.
+		workers.sort(compareSal);
+		show_workers(workers);
+		console.log("\n");
+		
+		// 10. Sort the workers based on their ages using compareSal.
+		// After sorting the workers, use show_workers to display the workers.
+		workers.sort(compareAge);
+		show_workers(workers);
+	
+	};
+
+	
+</script>
+</head>
+<body>
+	<script type="text/javascript">
+		main();
+	</script>
+	<h1>Check the JS console</h1>
+</body>
+</html>
