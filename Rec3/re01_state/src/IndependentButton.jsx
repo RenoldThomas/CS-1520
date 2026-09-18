@@ -3,10 +3,14 @@
 // state (a count) and increments the count when the button
 // is clicked. 
 
+import { useState } from "react";
+
 export default function IndependentButton() {
 	// Replace the div element below with the necessary JSX
+	const [count, setCount] = useState(0);
 	return (
-		<div>
-		</div>
+		<button onClick={() => setCount(count + 1)}>
+			Clicked {count} times
+		</button>
 	);
 }
