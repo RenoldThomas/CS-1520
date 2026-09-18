@@ -1,3 +1,6 @@
 [submodule "cs1520-programming-languages-for-web-app-project0-renoldthomas"]
 	path = cs1520-programming-languages-for-web-app-project0-renoldthomas
 	url = https://github.com/PittCS1520-WebApps/cs1520-programming-languages-for-web-app-project0-renoldthomas.git
+[submodule "cs1520-programming-languages-for-web-app-project-1-renoldthomas"]
+	path = cs1520-programming-languages-for-web-app-project-1-renoldthomas
+	url = https://github.com/PittCS1520-WebApps/cs1520-programming-languages-for-web-app-project-1-renoldthomas.git
